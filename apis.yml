@@ -38,6 +38,8 @@ apis:
       - Data Automation
       - RevOps
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/openprise
   - type: Website
     url: https://www.openprisetech.com/
   - type: Documentation
