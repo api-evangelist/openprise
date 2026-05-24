@@ -44,6 +44,8 @@ common:
     url: https://www.openprisetech.com/
   - type: Documentation
     url: https://www.openprisetech.com/
+  - type: LLMsTxt
+    url: https://openprisetech.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
