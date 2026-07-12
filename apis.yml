@@ -38,6 +38,10 @@ apis:
       - Data Automation
       - RevOps
 common:
+  - type: TrustCenter
+    url: security/openprise-trust-center.yml
+  - type: DomainSecurity
+    url: security/openprise-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/openprise
   - type: Website
