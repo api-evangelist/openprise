@@ -1,67 +1,146 @@
 aid: openprise
 name: Openprise
 description: >-
-  Free your RevOps teams from the complexities of bad data and give them data
-  they can trust, take action on, and make better decisions with. A simple way
-  to achieve the highest data quality across your marketing, sales, and RevOps
-  processes with the Openprise RevOps Data Automation (RDA) Cloud.
+  Openprise is an AI and data orchestration platform built for enterprise
+  go-to-market teams — RevOps, marketing operations and sales operations. It
+  cleans, unifies and activates GTM data across CRM, marketing automation and data
+  warehouse systems through no-code Jobs and Bots, with 400+ pre-built connectors,
+  multi-vendor enrichment waterfalls, deduplication, lead-to-account matching,
+  routing, scoring and segmentation. Its developer-facing surface is API Factory, a
+  licensed feature that turns any configured Job or Bot into a per-tenant REST
+  endpoint callable from Marketo webhooks, Salesforce triggers, web forms or any
+  system that can issue an HTTP POST. Openprise coined the term "data orchestration"
+  in 2017 and is headquartered in San Mateo, California.
 type: Index
 accessModel:
-  pricing: freemium
-  onboarding: unknown
+  pricing: paid
+  onboarding: sales-gate
   trial: false
   try_now: false
   public: false
-  label: Freemium
-  confidence: medium
+  label: Sales-gated
+  confidence: high
   source:
   - plans
-  generated: '2026-07-22'
-  method: derived
+  - https://www.openprisetech.com/pricing
+  generated: '2026-08-14'
+  method: searched
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openprise.png
 tags:
   - Data Automation
   - Data Quality
+  - Data Orchestration
+  - AI Orchestration
+  - Data Enrichment
+  - Deduplication
   - Marketing Operations
   - RevOps
   - Sales Operations
+  - Go To Market
 created: '2025-02-08'
-modified: '2026-04-28'
+modified: '2026-08-14'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/openprise/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
   - aid: openprise:openprise-api
-    name: Openprise API
+    name: Openprise API Factory
     description: >-
-      Openprise's "API Factory" lets RevOps teams turn business processes into
-      custom APIs on top of the RevOps Data Automation (RDA) Cloud. Public REST
-      API endpoints are not openly documented; access is provisioned through
-      the Openprise platform.
-    humanURL: https://www.openprisetech.com/
+      API Factory turns any Openprise Job or Bot into a REST endpoint with a single
+      "Enable API" action. The caller sends an HTTP POST carrying a JSON array of
+      records and receives a JSON array of processed records back. Endpoints are
+      generated per tenant, authenticated with a per-user API key created on the My
+      Account page, and their request/response contract is shown inside the
+      application via the "View API Docs" action — which is also the only place the
+      endpoint URL is published. API Factory is a separately licensed feature that a
+      tenant administrator must enable under Administration → Settings → Features.
+      Openprise publishes no OpenAPI document and no fixed public base URL.
+    humanURL: https://www.openprisetech.com/api-factory
     properties:
       - type: Documentation
-        url: https://www.openprisetech.com/
+        url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+      - type: APIReference
+        url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+      - type: GettingStarted
+        url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107937210260-API-Factory-101
+      - type: Authentication
+        url: authentication/openprise-authentication.yml
+      - type: Conventions
+        url: conventions/openprise-conventions.yml
+      - type: ErrorCatalog
+        url: errors/openprise-error-codes.yml
+      - type: RateLimits
+        url: rate-limits/openprise-rate-limits.yml
       - type: Platform
         url: https://www.openprisetech.com/platform/
     tags:
       - Data Automation
       - RevOps
+      - API Factory
 common:
+  - type: Website
+    url: https://www.openprisetech.com/
+  - type: Documentation
+    url: https://helpcenter.openprisetech.com/hc/en-us
+  - type: APIReference
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+  - type: GettingStarted
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107502554772-Quick-Start-Guide
+  - type: Support
+    url: https://helpcenter.openprisetech.com/hc/en-us
+  - type: Blog
+    url: https://www.openprisetech.com/blog
+  - type: GitHubOrganization
+    url: https://github.com/openprisetech
+  - type: Pricing
+    url: https://www.openprisetech.com/pricing
+  - type: Login
+    url: https://www.openprisecloud.com/
+  - type: PrivacyPolicy
+    url: https://www.openprisetech.com/legal/privacy
+  - type: Compliance
+    url: https://www.openprisetech.com/security
   - type: TrustCenter
     url: security/openprise-trust-center.yml
   - type: DomainSecurity
     url: security/openprise-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/openprise
-  - type: Website
-    url: https://www.openprisetech.com/
-  - type: Documentation
-    url: https://www.openprisetech.com/
+  - type: Conformance
+    url: conformance/openprise-conformance.yml
+  - type: Authentication
+    url: authentication/openprise-authentication.yml
+  - type: Conventions
+    url: conventions/openprise-conventions.yml
+  - type: ErrorCatalog
+    url: errors/openprise-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/openprise-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/openprise-changelog.yml
+  - type: ChangeLog
+    url: https://helpcenter.openprisetech.com/hc/en-us/categories/24103645602580-Release-Notes-Announcements
+  - type: Plans
+    url: plans/openprise-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/openprise-rate-limits.yml
+  - type: Packages
+    url: packages/openprise-packages.yml
+  - type: LLMsTxt
+    url: llms/openprise-llms.txt
   - type: LlmsText
     url: https://openprisetech.com/llms.txt
+  - type: Integrations
+    url: https://www.openprisetech.com/integrations
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/openprise
+  - type: YouTube
+    url: https://www.youtube.com/channel/UCWd7PYa-TtRq7SdRkfnFcow
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-14'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1
