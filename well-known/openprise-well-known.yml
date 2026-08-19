@@ -1,0 +1,59 @@
+generated: '2026-08-14'
+method: probed
+source: live GET of the /.well-known/ discovery surface on every Openprise host
+provider: Openprise
+providerId: openprise
+description: >-
+  Probe of the RFC 8615 /.well-known/ discovery surface on the Openprise marketing
+  host and the Openprise Cloud application host. Nothing is served. Recorded as an
+  absence, not a presence: no WellKnown, SecurityTxt or AgentCard pointer is wired
+  into apis.yml from this file.
+hosts:
+  - host: https://www.openprisetech.com
+    note: >-
+      Webflow-hosted marketing site. Every /.well-known/* path returns HTTP 404 with
+      the body "Invalid .well-known request" — a real negative, not an SPA catch-all.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://www.openprisecloud.com
+    note: >-
+      The Openprise Cloud application host (the "Log in" destination linked from
+      openprisetech.com). Anonymous requests to EVERY path, including the site root
+      and /robots.txt, are refused with an nginx HTTP 403. No discovery surface is
+      reachable without a tenant session.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+      - path: /.well-known/agent.json
+        status: 403
+findings:
+  well_known_documents_served: 0
+  security_txt: false
+  agent_card: false
+  openid_configuration: false
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

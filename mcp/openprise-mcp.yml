@@ -1,0 +1,51 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  Openprise Help Center (592 public articles enumerated), openprisetech.com, llms.txt,
+  npm, and the openprisetech GitHub account
+provider: Openprise
+providerId: openprise
+status: none
+description: >-
+  Openprise operates no Model Context Protocol server, hosted or local, and none was
+  derived. This file records a measured absence so the catalog can distinguish "nobody
+  shipped a server" from "not yet checked". NO MCPServer pointer is wired into apis.yml,
+  and no candidate tool list was fabricated — there is no OpenAPI to derive one from.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+server: null
+tools: []
+searched:
+  - surface: Openprise Help Center full-text article index (592 articles)
+    result: no article mentions MCP, Model Context Protocol, or an agent tool server
+  - surface: https://www.openprisetech.com/llms.txt
+    result: >-
+      200, real llms.txt. Lists Platform, Solutions, Company and Resources sections. No MCP
+      endpoint, no tool list, no agent surface of any kind.
+  - surface: npm registry search for "openprise"
+    result: 0 packages
+  - surface: https://github.com/openprisetech
+    result: 1 public repository (a 2019 Chrome extension); no MCP server
+  - surface: /.well-known/* on www.openprisetech.com and www.openprisecloud.com
+    result: 404 and 403 respectively; no oauth-protected-resource, no agent card
+context: >-
+  Openprise does market agent-adjacent capability — "Create composable Agents", an embedded
+  AI model, and per-tier AI orchestration allowances of 5,000+/10,000+ API calls per day.
+  Those agents run INSIDE the Openprise platform against the customer's own data; none of
+  it is exposed to an external agent client. The gap is worth naming: Openprise builds
+  agents but publishes no surface an agent can call it through.
+evidence:
+  - url: https://www.openprisetech.com/llms.txt
+    http_status: 200
+  - url: https://helpcenter.openprisetech.com/api/v2/help_center/en-us/articles.json
+    http_status: 200
+  - url: https://www.openprisecloud.com/.well-known/oauth-protected-resource
+    http_status: 403
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

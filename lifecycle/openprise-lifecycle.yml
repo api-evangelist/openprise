@@ -1,0 +1,99 @@
+generated: '2026-08-14'
+method: searched
+source: https://helpcenter.openprisetech.com/hc/en-us/categories/24103645602580-Release-Notes-Announcements
+provider: Openprise
+providerId: openprise
+description: >-
+  Lifecycle posture for the Openprise platform and its API Factory surface. Openprise
+  ships numbered calendar releases with published notes going back to 2017, but there is
+  no API version identifier, no deprecation or sunset policy, no public status page, and
+  no published SLA. Support response targets are published on the pricing page.
+versioning:
+  scheme: none
+  current: null
+  docs: null
+  note: >-
+    API Factory endpoints carry no version segment, version header, or dated version
+    train. The platform ships numbered calendar releases (2026 Release 1 through 4) that
+    are documented in the Help Center, but those are product releases and are not
+    addressable by an API caller.
+  platform_release: '2026 Release 4 (2026-07-25)'
+  release_notes: https://helpcenter.openprisetech.com/hc/en-us/articles/36104841076116-Release-Notes-Current-Year
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation policy, notice period, or RFC 8594 Sunset/Deprecation header support is
+    published. Breaking changes are visible only as prose inside the yearly release notes.
+    NO Deprecation pointer is wired into apis.yml.
+status_page:
+  url: null
+  published: false
+  note: >-
+    Openprise operates no status page. openprise.statuspage.io and
+    openprisetech.statuspage.io both resolve but 302 to Atlassian's own Statuspage
+    marketing site — a soft-200 false positive, not an Openprise page.
+    status.openprisetech.com does not resolve. Maintenance windows are announced in the
+    Help Center's Release Notes & Announcements category instead. NO StatusPage pointer
+    is wired into apis.yml.
+  probed:
+    - url: https://openprise.statuspage.io
+      status: 200
+      resolves_to: https://www.atlassian.com/software/statuspage
+      verdict: false-positive
+    - url: https://openprisetech.statuspage.io
+      status: 200
+      resolves_to: https://www.atlassian.com/software/statuspage
+      verdict: false-positive
+    - url: https://status.openprisetech.com
+      status: null
+      verdict: NXDOMAIN
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No uptime SLA is published. API Factory is marketed as offering "high availability,
+    and zero downtime" with no numeric target behind it. What IS published are support
+    response targets, per plan tier.
+  support_response_targets:
+    - tier: Professional
+      response: 4-hour
+      hours: Monday - Friday, 8am - 6pm PT
+    - tier: Enterprise
+      response: 2-hour
+      hours: 24 x 7 x 365
+  source: https://www.openprisetech.com/pricing
+retention:
+  logs: 1 year
+  note: Published as "Length of log retention — 1 year" on both plan tiers.
+  source: https://www.openprisetech.com/pricing
+security_advisories:
+  published: true
+  channel: https://helpcenter.openprisetech.com/hc/en-us/categories/24103645602580-Release-Notes-Announcements
+  examples:
+    - 'Addressing Apache Tomcat vulnerability CVE-2025-24813'
+    - 'Addressing HTTP/2 Protocol & Rapid Reset Attack CVE-2023-44487'
+  note: >-
+    Openprise publishes named-CVE response advisories in the same Help Center category as
+    its release notes. This is vulnerability RESPONSE communication; it is not a
+    vulnerability disclosure program and Openprise publishes no intake channel for
+    externally-reported vulnerabilities.
+support:
+  email: help@openprisetech.com
+  phone: '+1-650-445-4353'
+  help_center: https://helpcenter.openprisetech.com/hc/en-us
+  source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107438951828-Support
+deprecated_operations: []
+evidence:
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/36104841076116-Release-Notes-Current-Year
+    http_status: 200
+  - url: https://www.openprisetech.com/pricing
+    http_status: 200
+  - url: https://openprise.statuspage.io
+    http_status: 200
+    note: redirects off-domain to atlassian.com — rejected
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

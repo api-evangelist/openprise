@@ -1,0 +1,72 @@
+# Openprise: AI and Data Orchestration Platform for Enterprise Ops
+
+> Openprise is the only AI and data orchestration platform built for enterprise go-to-market teams. It helps Ops teams stop firefighting and start building the infrastructure that drives growth — by automating processes, unifying data silos, and consolidating point solutions. Openprise coined the term "data orchestration" in 2017 and is trusted by Ops teams at companies like Rippling, Adobe, and CrowdStrike.
+
+## Brand
+
+- **Positioning:** The only AI and data orchestration platform built for modern GTM teams
+- **Tagline:** Stop being the ops data janitor. Start being a growth architect.
+- **Target audience:** Revenue Operations (RevOps), Marketing Operations, Sales Operations teams at enterprise B2B companies
+- **Headquarters:** San Mateo, CA
+- **Website:** https://www.openprisetech.com
+
+## Platform
+
+- [Platform Overview](https://www.openprisetech.com/platform): One platform. Every GTM data workflow, end to end.
+- [How It Works](https://www.openprisetech.com/how-it-works): From raw data to revenue-ready, step by step.
+- [Data Orchestration](https://www.openprisetech.com/data-orchestration): Clean, unify, and activate GTM data with no-code iPaaS. Supports ETL/ELT/Reverse ETL pipelines without SQL, Python, or RegEx.
+- [AI Orchestration](https://www.openprisetech.com/ai-orchestration): Turn AI pilots into secure, scalable, production-ready workflows with built-in context and prompt management, hallucination validation, and ROI tracking.
+- [Integrations](https://www.openprisetech.com/integrations): 300+ pre-built connectors for CRM, MAP, data warehouse, and enrichment vendors. No code needed.
+- [App Factory](https://www.openprisetech.com/app-factory): Build custom GTM apps without writing a single line of code.
+- [API Factory](https://www.openprisetech.com/api-factory): Package business processes into APIs your Ops team controls.
+
+## Solutions
+
+- [All Solutions](https://www.openprisetech.com/solutions)
+- [System Integration](https://www.openprisetech.com/solutions/system-integration): De-silo CRM, MAP, and data warehouse without IT tickets.
+- [List Loading](https://www.openprisetech.com/solutions/list-loading): Load clean, matched, enriched lists in minutes.
+- [Cleansing & Standardization](https://www.openprisetech.com/solutions/data-cleansing): Stop bad data before it wrecks your pipeline.
+- [Deduplication](https://www.openprisetech.com/solutions/deduplication): One record per account — no more CRM chaos.
+- [Segmentation](https://www.openprisetech.com/solutions/segmentation): Cut your database exactly how campaigns need it.
+- [Multi-Vendor Data Enrichment](https://www.openprisetech.com/solutions/multi-vendor-enrichment): Orchestrate multiple enrichment vendors into a waterfall to maximize coverage and fill rates by 30–40%.
+- [Matching and Routing](https://www.openprisetech.com/solutions/matching-and-routing): Right lead, right rep, right now.
+- [Lead & Account Scoring](https://www.openprisetech.com/solutions/lead-and-account-scoring): Focus your team where revenue is most likely.
+- [Data Fracking](https://www.openprisetech.com/solutions/data-enrichment/data-fracking): AI-powered extraction of contact data from unstructured sources like emails, transcripts, and public records.
+- [Mechanized PLG Funnel](https://www.openprisetech.com/solutions/funnel-automation/mechanized-plg-funnel): Enrich freemium users, surface buying signals, and deliver sales-ready cohorts at scale.
+
+## Solutions by Role
+
+- [Marketing Operations](https://www.openprisetech.com/solutions-for-marketing-ops): Stop firefighting data, start building pipeline that converts.
+- [Sales Operations](https://www.openprisetech.com/solutions-for-sales-ops): Give reps clean data and faster speed-to-lead.
+- [Revenue Operations](https://www.openprisetech.com/solutions-for-revops): One data truth powering every team across the funnel.
+
+## Why Openprise
+
+- [What Makes Us Different](https://www.openprisetech.com/what-makes-openprise-different): Your stack, your rules, your data. Openprise is a platform, not a data provider — it orchestrates all your data including from vendors you already use.
+- [Services](https://www.openprisetech.com/services): Expert implementation help to get your GTM stack running fast.
+- [Openprise vs Data Vendors](https://www.openprisetech.com/openprise-vs-data-vendors)
+- [Openprise vs iPaaS](https://www.openprisetech.com/openprise-vs-ipaas)
+- [Openprise vs AI Point Tools](https://www.openprisetech.com/openprise-vs-ai-point-tools)
+
+## Company
+
+- [About](https://www.openprisetech.com/about): Built by operators who understand the grind. A veteran team of enterprise software technologists with backgrounds in CRM, big data, integration, and security.
+- [Contact](https://www.openprisetech.com/contact-openprise/)
+- [Request a Demo](https://www.openprisetech.com/request-a-demo)
+
+## Customers
+
+- [Customer Stories](https://www.openprisetech.com/customer-stories): Real Ops teams. Real numbers.
+- [Driver Awards](https://www.openprisetech.com/driver-awards): Recognizing Ops leaders building smarter GTM stacks.
+
+## Resources
+
+- [Resource Library](https://www.openprisetech.com/resources): Guides, reports, and playbooks.
+- [Blog](https://www.openprisetech.com/blog): Ops-focused content from inside the trenches.
+- [Events](https://www.openprisetech.com/events)
+- [Certification Program](https://www.openprisetech.com/certification-program): GTM Ops expertise certification.
+- [Our Data](https://www.openprisetech.com/our-data): AI-powered multi-vendor data enrichment — global company data, intent, technographic, and detailed contact info.
+
+## XML Sitemap
+
+- https://www.openprisetech.com/sitemap.xml

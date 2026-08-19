@@ -1,0 +1,116 @@
+generated: '2026-08-14'
+method: searched
+source: https://helpcenter.openprisetech.com/hc/en-us/sections/24103670885012-Errors
+provider: Openprise
+providerId: openprise
+format: vendor-specific
+description: >-
+  Openprise publishes no RFC 9457 problem type registry and no HTTP error-code reference —
+  there is no OpenAPI to derive 4xx/5xx responses from, because API Factory endpoints are
+  generated per tenant. What Openprise DOES publish is a curated Errors section in its Help
+  Center: eleven named failure conditions with causes and remediation. That is the real
+  error surface, captured below. Each entry carries a `layer` so a consumer can tell an
+  Openprise platform error from a downstream CRM/MAP error Openprise merely relays.
+envelope:
+  http: null
+  note: >-
+    No HTTP error envelope is documented. Failures surface in two places — as a job-run
+    error string in the Openprise UI and job log (sometimes carrying a numeric errorCode,
+    e.g. "{errorCode:4001, errorMessage:...}"), or, for outbound Call Simple REST API
+    tasks, as record-level attributes written back onto the record.
+  outbound_attributes:
+    - name: op_RESTAPI_success
+      description: Whether the outbound call succeeded.
+    - name: op_RESTAPI_error_message
+      description: The error text returned by the external service.
+    - name: op_RESTAPI_request_id
+      description: Openprise-generated identifier for the outbound request.
+    - name: op_RESTAPI_request_time
+      description: Timestamp of the outbound request.
+  source: https://helpcenter.openprisetech.com/hc/en-us/articles/27776528482324-Call-Simple-REST-API-Webhook
+errors:
+  - code: '4001'
+    layer: openprise-platform
+    title: Maximum allowed records in a duplicate group is 10000
+    detail: >-
+      A de-duplication job produced a duplicate group larger than the platform ceiling of
+      10,000 records.
+    remediation: Tighten the matching criteria so groups stay under the ceiling.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107427607572-Error-Error-while-running-job-errorCode-4001-errorMessage-Maximum-allowed-records-in-a-duplicate-group-is-10000-10xxx-records-found-in-a-duplicate-group
+  - code: job-resources-exhausted
+    layer: openprise-platform
+    title: This job has exhausted available resources
+    detail: >-
+      "Additional resources have been secured and will be used for the next run and no
+      changes to the job are required." A soft capacity ceiling that self-heals.
+    remediation: None required; re-run.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107418620052-Error-This-job-has-exhausted-available-resources-Additional-resources-have-been-secured-and-will-be-used-for-the-next-run-and-no-changes-to-the-job-are-required
+  - code: unable-to-clone-job
+    layer: openprise-platform
+    title: 'Error: Unable to Clone Job'
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24733099430420-Error-Unable-to-Clone-Job
+  - code: data-target-offline
+    layer: openprise-platform
+    title: Error while running Job — Data target is off-line
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107509734804-Error-Error-while-running-Job-Data-target-is-off-line
+  - code: credentials-already-in-use
+    layer: openprise-platform
+    title: >-
+      These credential(s) are already being used, please get in touch with <name> to get
+      shared access
+    detail: >-
+      Connection credentials are owned by an Openprise group; a second user cannot bind
+      the same credential without being granted shared access.
+    remediation: Grant the requesting user's group access under Security Settings → Credentials.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107479600788-Error-These-credential-s-are-already-being-used-please-get-in-touch-with-someone-s-name-to-get-shared-access
+  - code: ExceededQuota.ApiBatchItems
+    layer: pass-through
+    vendor: Salesforce
+    title: 'ExceededQuota: ApiBatchItems Limit exceeded'
+    detail: >-
+      Raised while processing a bulk action; the customer's own Salesforce Bulk API batch
+      quota was exhausted, not an Openprise limit.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107509786900-Error-failed-to-execute-with-error-Task-id-xxxxxx-and-name-Xxxxxxx-failed-with-message-Error-while-processing-bulk-action-for-taskId-dtId-xxxxxx-xxx-ExceededQuota-ApiBatchItems-Limit-exceeded
+  - code: INVALID_CROSS_REFERENCE_KEY
+    layer: pass-through
+    vendor: Salesforce
+    title: 'INVALID_CROSS_REFERENCE_KEY: invalid cross reference id'
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107448762388-Error-INVALID-CROSS-REFERENCE-KEY-invalid-cross-reference-id
+  - code: INVALID_CROSS_REFERENCE_KEY.campaign_member
+    layer: pass-through
+    vendor: Salesforce
+    title: op_campaign_member_error contains INVALID_CROSS_REFERENCE_KEY
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107509578260-Error-op-campaign-member-error-contains-INVALID-CROSS-REFERENCE-KEY-invalid-cross-reference-id
+  - code: CANNOT_UPDATE_CONVERTED_LEAD
+    layer: pass-through
+    vendor: Salesforce
+    title: 'CANNOT_UPDATE_CONVERTED_LEAD: cannot reference converted lead'
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107471610004-Error-CANNOT-UPDATE-CONVERTED-LEAD-cannot-reference-converted-lead
+  - code: INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY
+    layer: pass-through
+    vendor: Salesforce
+    title: Insufficient_Access_on_Cross_Reference_Entity or Insufficient_Access_on_Cross_Reference_Id
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107468939156-Error-Insufficient-Access-on-Cross-Reference-Entity-or-Insufficient-Access-on-Cross-Reference-Id
+  - code: InvalidBatch
+    layer: pass-through
+    title: 'InvalidBatch: Records not processed'
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107446471316-Error-InvalidBatch-Records-not-processed
+counts:
+  total: 11
+  openprise_platform: 5
+  pass_through: 6
+gaps:
+  - No HTTP status code is published for any of these conditions.
+  - No stable machine-readable error type URI or registry exists.
+  - >-
+    The API Factory endpoint's own 4xx/5xx behaviour is undocumented publicly; it is shown
+    only in the per-tenant "View API Docs" popup inside the application.
+evidence:
+  - url: https://helpcenter.openprisetech.com/api/v2/help_center/en-us/sections.json
+    http_status: 200
+  - url: https://helpcenter.openprisetech.com/api/v2/help_center/en-us/articles.json
+    http_status: 200
+    note: 592 public articles enumerated; the Errors section holds 11
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

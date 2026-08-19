@@ -1,0 +1,84 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  npm, PyPI, RubyGems, crates.io, Packagist, NuGet, Maven Central and the GitHub account
+  github.com/openprisetech
+provider: Openprise
+providerId: openprise
+description: >-
+  Openprise ships no client SDK in any public package registry. Every registry below was
+  queried unauthenticated and returned zero first-party results. The one first-party
+  artifact Openprise has ever published to a developer channel is a Chrome extension whose
+  repository has not been touched since 2019. NO SDKs pointer is wired into apis.yml —
+  there is no client library to point at.
+package_count: 0
+sdk_count: 0
+official_sdk: false
+registries_searched:
+  - registry: npm
+    query: openprise
+    results: 0
+    endpoint: https://registry.npmjs.org/-/v1/search?text=openprise
+  - registry: pypi
+    queried:
+      - openprise
+      - openprise-sdk
+      - openprise-api
+    results: 0
+    status: 404 on every candidate
+  - registry: rubygems
+    query: openprise
+    results: 0
+  - registry: crates.io
+    query: openprise
+    results: 0
+  - registry: packagist
+    query: openprise
+    results: 0
+    note: matches returned were unrelated projects (opentribes, ansible roles)
+  - registry: nuget
+    query: openprise
+    results: 0
+    endpoint: https://azuresearch-usnc.nuget.org/query?q=openprise
+  - registry: maven-central
+    query: openprise
+    results: 0
+  - registry: pkg.go.dev
+    query: openprise
+    results: 0
+packages: []
+other_first_party_distributions:
+  - name: Virtual Data Integrator (VDI)
+    kind: browser-extension
+    platform: Google Chrome
+    registry: github
+    official: true
+    url: https://github.com/openprisetech/vdi
+    version: null
+    published: '2019-05-13'
+    note: >-
+      Distributed as a checked-in "Virtual Data Integrator.zip" in the repository, with no
+      registry metadata endpoint, no tag, no release, and no version string to read — so
+      `version` is recorded as null after checking, not left unset. The repository has had
+      no commit since 2019-05-13 and carries no license. This is the only public code
+      artifact under the openprisetech GitHub account (1 public repo, account created
+      2019-05-13). It is a data-capture browser extension, not a client library for the
+      API Factory surface, so it does not count toward sdk_count.
+finding: >-
+  A provider whose flagship developer feature ("API Factory") generates REST endpoints has
+  published no client library for them in seven years, in any language, in any registry.
+  That is consistent with the surface itself: the endpoints are tenant-generated and their
+  contracts are only visible inside the application, so there is nothing stable for an SDK
+  to wrap.
+evidence:
+  - url: https://registry.npmjs.org/-/v1/search?text=openprise
+    http_status: 200
+    result: 'total: 0'
+  - url: https://pypi.org/pypi/openprise/json
+    http_status: 404
+  - url: https://api.github.com/users/openprisetech/repos
+    http_status: 200
+    result: 1 repository (vdi), last pushed 2019-05-13
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

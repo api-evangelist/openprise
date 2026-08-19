@@ -1,0 +1,92 @@
+generated: '2026-08-14'
+method: searched
+source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+docs: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+provider: Openprise
+providerId: openprise
+description: >-
+  Authentication profile for the Openprise API Factory surface and for the Openprise
+  Cloud platform itself. Derived from the provider's own Help Center rather than from
+  an OpenAPI document — Openprise publishes no machine-readable specification, because
+  every API Factory endpoint is generated per tenant from a customer-configured Job or
+  Bot and its contract is shown inside the application ("View API Docs").
+summary:
+  types:
+    - apiKey
+    - saml2
+  api_key_in:
+    - header
+  oauth2_flows: []
+  oauth2_supported: false
+  note: >-
+    Openprise's own Help Center states plainly, on the Call Simple REST API (Webhook)
+    task template page, "At this time, Openprise does not support authentication using
+    OAuth to the API service. We only support API key authentication." That sentence is
+    about Openprise calling OUT to a third-party service, and it is the clearest
+    published statement of the platform's auth posture. No OAuth 2.0 or OpenID Connect
+    surface was found on either direction of the integration.
+schemes:
+  - name: API Factory API key
+    type: apiKey
+    in: header
+    surface: inbound
+    applies_to: API Factory generated REST endpoints (API Jobs and API Bots)
+    provisioning: >-
+      Per user, inside the tenant. The user clicks their username, opens the My Account
+      page, and generates a key on the API Key tab. API Factory must first be switched
+      on for the whole tenant by an Openprise System Administrator under Administration
+      → Settings → Features, and it is a separately licensed feature.
+    header_name: null
+    header_name_note: >-
+      The exact header name is not published. The Help Center shows it only as a
+      screenshot of the Custom Headers panel ("an example of custom headers needed for
+      Openprise's API Factory") on the Call Simple REST API task page, and the endpoint
+      contract itself is revealed in the in-app "View API Docs" popup. Recorded as null
+      rather than guessed.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+  - name: Data Service API key
+    type: apiKey
+    in: header
+    surface: outbound
+    applies_to: >-
+      Third-party services Openprise calls through the Simple REST API (Webhook) data
+      service and task template.
+    provisioning: >-
+      Stored as an Account on a Data Service under Data → Data Services. The key is then
+      exposed to the job as a "Data Service api key" attribute that can be interpolated
+      into the URL, Custom Headers, or Request Body of the Call Simple REST API task.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/27778785661588-Simple-Rest-API-Webhook-Data-Service
+  - name: SAML 2.0 single sign-on
+    type: saml2
+    surface: platform-login
+    applies_to: Openprise Cloud web application (https://www.openprisecloud.com)
+    identity_providers:
+      - Okta
+      - OneLogin
+      - Oracle Access Manager
+      - Ping Federate
+    note: >-
+      Configured under Administration → Security Settings → SSO Integration. Ping SSO
+      support was added in the May 30, 2026 release. Password policy (minimum length,
+      composition rules, and a default 5-month rotation) is configured on the same page.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107864003732-Single-Sign-On-SSO-Configuration
+credential_governance:
+  - Credentials are shared to Openprise groups rather than individuals; group-level read
+    and edit permissions are set on each connection under Security Settings → Credentials.
+  - Stored third-party credentials are encrypted with a 256-bit key, per the published
+    security policy.
+  - Role-based permissions and delegated administration are listed on both published
+    plan tiers.
+evidence:
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+    http_status: 200
+    via: Zendesk Help Center API (/api/v2/help_center/en-us/articles/24107925788180.json)
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/27776528482324-Call-Simple-REST-API-Webhook
+    http_status: 200
+    via: Zendesk Help Center API
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107901992084-Security-Settings
+    http_status: 200
+    via: Zendesk Help Center API
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

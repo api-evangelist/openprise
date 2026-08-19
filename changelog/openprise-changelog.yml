@@ -1,0 +1,122 @@
+generated: '2026-08-14'
+method: searched
+source: https://helpcenter.openprisetech.com/hc/en-us/articles/36104841076116-Release-Notes-Current-Year
+docs: https://helpcenter.openprisetech.com/hc/en-us/categories/24103645602580-Release-Notes-Announcements
+provider: Openprise
+providerId: openprise
+description: >-
+  Openprise publishes dated platform release notes in its Help Center, one article per
+  calendar year, back to 2017. Releases are numbered within the year (Release 1, 2, 3, …)
+  and each entry separates "New features and enhancements" from "Bug fixes". These are
+  PLATFORM releases, not API versions — API Factory endpoints carry no version identifier.
+scheme:
+  type: calendar-release
+  format: "<Month D, YYYY> - Release <n>"
+  cadence: roughly quarterly (4 numbered releases in 2026 through July)
+  breaking_change_policy: none-published
+  current_year_article: https://helpcenter.openprisetech.com/hc/en-us/articles/36104841076116-Release-Notes-Current-Year
+current:
+  release: '2026 Release 4'
+  date: '2026-07-25'
+archive:
+  - year: 2026
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/36104841076116-Release-Notes-Current-Year
+  - year: 2025
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/46687002277908-Release-Notes-2025
+  - year: 2024
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107382127252-Release-Notes-2024
+  - year: 2023
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107478584852-Release-Notes-2023
+  - year: 2022
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107552815380-Release-Notes-2022
+  - year: 2021
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107612311188-Release-Notes-2021
+  - year: 2020
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107647443604-Release-Notes-2020
+  - year: 2019
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107684875668-Release-Notes-2019
+  - year: 2018
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107763048212-Release-Notes-2018
+  - year: 2017
+    url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107776020500-Release-Notes-2017
+entries:
+  - release: 'Release 4'
+    date: '2026-07-25'
+    breaking: []
+    additions:
+      - Oracle Sales Cloud merge records task template, to merge contacts or accounts in Oracle Sales Cloud
+      - Canvas-like visual layout for the bot configuration screen
+      - Upload of Excel files in List Load apps in App Factory
+      - Active Bots and Inactive Bots sections on the bot page
+    changes:
+      - '"View outputs" in the task edit screen now toggles between task edit and job output views'
+      - Default sort order for data downloads changed to latest created date
+      - Description character limit raised to 2,000 characters across data sources, jobs and bots
+      - Improved loading performance for the bot configuration page
+    fixes:
+      - Fixed issue with Security Keys being exposed in the API response
+      - Fixed import concurrency issues with NetSuite data sources
+      - Fixed missing CompanyInformation_L1 and CompanyInformation_L2 attributes for D&B Data Blocks
+      - Fixed HubSpot data source imports failing when the last modified date returned without milliseconds
+  - release: 'Release 3'
+    date: '2026-05-30'
+    breaking: []
+    additions:
+      - Google Drive - PDF Files data source connector (BETA)
+      - Admin Tooling for attribute search, copying saved searches and reports, and mass owner assignment (BETA)
+      - Microsoft Foundry as a new AI data service provider
+      - Additional models for the Gemini, OpenAI GPT and Perplexity data services
+      - Caching toggle and caching-status output attribute for the Ask AI task template
+      - Caching for the Web Scraper and Web Page Source Search task templates
+      - SSO support for Ping
+    changes:
+      - Improved load times for the data source, data target and data services pages
+      - Improved output handling for the Ask AI task template
+      - '"Export all filtered records" now checked by default in the Export: Add/Update task template'
+    fixes:
+      - Fixed incorrect reasoning effort displayed for the Openprise LLM data service
+      - Fixed error shown when removing the only filter attribute on a data catalog
+      - Fixed failures importing large amounts of data from Databricks
+  - release: 'Release 2'
+    date: '2026-04-04'
+    breaking: []
+    additions:
+      - Monday.com Custom Auth connector, with CSV/Excel import and export
+      - Filter records task template can now filter a set number of records by a sort criterion
+    changes:
+      - Revamped task navigation menu in the task editing screen
+      - Job list screen revamped to visualize job dependencies
+      - Download data now preserves table column order
+    fixes:
+      - Marketo exports failing when all records hit record-level errors now report "Success with errors"
+      - Fixed data source creation for the Microsoft Dynamics Campaign Response object
+      - Fixed inability to update a task whose configured data service had been deleted
+      - Fixed Pardot data source field retrieval and non-UTC credential time zone import gaps
+  - release: 'Release 1'
+    date: '2026-02-07'
+    breaking: []
+    additions:
+      - Salutary Get Contact by Contact Details enrichment now requires last name to be mapped
+      - New mode of operation to match accounts via the PDL account ID
+      - New mode of operation to match contacts via the Netwise contact ID
+    fixes:
+      - Fixed job failures enriching via ZoomInfo with parallel requests greater than 1
+      - Fixed several "@" attribute-picker defects in prompt strings
+      - Fixed a bot used in App Factory being able to have recurrence enabled
+      - Fixed duplicate rows on the view data screen when paging back and forth
+announcements:
+  note: >-
+    The same Help Center category carries security advisories and maintenance windows —
+    e.g. "Addressing Apache Tomcat vulnerability CVE-2025-24813" and "Addressing HTTP/2
+    Protocol & Rapid Reset Attack CVE-2023-44487". Openprise has no separate status page;
+    this category is where maintenance windows are announced.
+evidence:
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/36104841076116-Release-Notes-Current-Year
+    http_status: 200
+    via: Zendesk Help Center API
+  - url: https://helpcenter.openprisetech.com/hc/en-us/categories/24103645602580-Release-Notes-Announcements
+    http_status: 200
+    via: Zendesk Help Center API (categories.json)
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

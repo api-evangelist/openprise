@@ -1,0 +1,134 @@
+generated: '2026-08-14'
+method: searched
+source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+provider: Openprise
+providerId: openprise
+description: >-
+  Cross-cutting request and response semantics for the Openprise API Factory surface,
+  read from the provider's own Help Center. API Factory converts a configured Openprise
+  Job or Bot into a REST endpoint with one action, so there is no fixed resource model —
+  the convention layer below is what is constant across every generated endpoint.
+shape:
+  model: process-as-endpoint
+  note: >-
+    "any Job in the Openprise platform can be easily converted to a REST API with the
+    'Enable API' action." The generated endpoint's request and response bodies are
+    defined by the attributes of the underlying Job or Bot, and are shown to the tenant
+    in the in-app "View API Docs" popup, which also carries the endpoint URL.
+transport:
+  protocol: https
+  methods:
+    - POST
+  note: >-
+    Inbound API Factory endpoints accept HTTP POST only. Openprise's outbound Call Simple
+    REST API task can issue GET, POST, PUT or DELETE against third-party services.
+request:
+  content_type: application/json
+  body: >-
+    A JSON array, where each element is a record to process. Batch-first: the documented
+    shape is "a JSON array representing multiple records to process".
+  encoding_options_outbound:
+    - JSON
+    - Form/URL
+    - NONE
+response:
+  content_type: application/json
+  body: >-
+    A JSON array of the processed records, carrying the attributes and values that
+    resulted from the Job or Bot run.
+  format_note: >-
+    JSON is the only supported response format. Openprise's outbound task documentation
+    states "Response Format: JSON - this is the only output format supported at this time."
+  parsing: >-
+    On the outbound side, response payloads are mapped to Openprise attributes with
+    JMESPath expressions (https://jmespath.org/).
+authentication:
+  style: api-key
+  detail: authentication/openprise-authentication.yml
+  oauth2: false
+idempotency:
+  supported: unknown
+  documented: false
+  note: >-
+    No idempotency key, replay window, or retry-safety contract is published anywhere in
+    the Help Center or on the API Factory product page. Because an API Factory endpoint
+    runs an arbitrary customer-configured Job, whether a repeated call is safe depends on
+    the Job. NO Idempotency pointer is wired into apis.yml — there is no idempotency
+    contract to point at.
+pagination:
+  supported: false
+  note: >-
+    Not applicable. The surface is a batch-in/batch-out processing endpoint, not a
+    collection-listing API; the caller supplies the record set in the request array.
+versioning:
+  scheme: none-published
+  note: >-
+    No version segment, version header, or dated version train is documented for API
+    Factory endpoints. The platform itself ships numbered calendar releases (Release 1..N
+    per year) — see changelog/openprise-changelog.yml — but those are platform releases,
+    not API versions.
+tracing:
+  request_id: op_RESTAPI_request_id
+  note: >-
+    On the OUTBOUND side the Call Simple REST API task returns four diagnostic attributes
+    onto every record — op_RESTAPI_request_id, op_RESTAPI_request_time,
+    op_RESTAPI_success and op_RESTAPI_error_message. These are Openprise-generated
+    tracing attributes, and are the closest published equivalent of a request-id
+    convention. No equivalent is documented for inbound API Factory responses.
+error_envelope:
+  format: vendor-specific
+  detail: errors/openprise-error-codes.yml
+  note: >-
+    Openprise does not publish an RFC 9457 problem+json envelope. Documented failures
+    surface either as a job-run error string (sometimes carrying a numeric errorCode, e.g.
+    errorCode:4001) or, for outbound calls, on the op_RESTAPI_error_message attribute.
+rate_limit_signaling:
+  headers_documented: false
+  detail: rate-limits/openprise-rate-limits.yml
+  note: >-
+    Throttling is advertised as a built-in API Factory capability ("built-in security,
+    API key authentication, throttling, high availability, and zero downtime") and the
+    pricing page publishes a per-day call allowance per tier, but no response headers,
+    no 429 contract, and no Retry-After behaviour are documented.
+latency:
+  note: >-
+    "Simple jobs return responses in real time; complex bots may take longer depending on
+    processing requirements." API Bots that import data sources are explicitly called out
+    as potentially much slower.
+constraints:
+  unsupported_task_templates:
+    note: >-
+      Openprise publishes a list of task templates that cannot be used inside an API
+      Factory endpoint (as of the dated 2/2020 note in the Help Center).
+    items:
+      - Marketo manage list members
+      - Marketo merge leads
+      - RDS MySQL export rule
+      - Redshift export rule
+      - SFDC merge records
+      - Upload file
+      - De-duplication and merge against master data
+      - MySQL export task
+      - PostgreSQL export task
+      - RDS PostgreSQL export task
+      - Rackspace MySQL export task
+      - Microsoft Dynamics merge entity
+  licensing: >-
+    API Factory is a separately licensed feature and may not be enabled in a tenant. It
+    must be switched on under Administration → Settings → Features.
+cross_links:
+  authentication: authentication/openprise-authentication.yml
+  errors: errors/openprise-error-codes.yml
+  lifecycle: lifecycle/openprise-lifecycle.yml
+  rate_limits: rate-limits/openprise-rate-limits.yml
+  changelog: changelog/openprise-changelog.yml
+evidence:
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+    http_status: 200
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/27776528482324-Call-Simple-REST-API-Webhook
+    http_status: 200
+  - url: https://www.openprisetech.com/api-factory
+    http_status: 200
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

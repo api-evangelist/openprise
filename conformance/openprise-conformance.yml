@@ -1,0 +1,121 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.openprisetech.com/security
+provider: Openprise
+providerId: openprise
+description: >-
+  Which industry and cross-cutting standards the Openprise platform conforms to, read
+  from the provider's published security policy, pricing page and Help Center. Openprise
+  publishes no machine-readable API specification, so nothing below is derived from an
+  OpenAPI document — each entry cites the page that states it.
+standards:
+  - id: soc2-type-ii
+    name: SOC 2 Type II
+    conforms: true
+    evidence: >-
+      Listed as "SOC2 Type II compliance" under Security, compliance, and infrastructure
+      on both published plan tiers.
+    source: https://www.openprisetech.com/pricing
+  - id: gdpr
+    name: GDPR
+    conforms: true
+    evidence: >-
+      "Global privacy compliance" is listed on both plan tiers, and the platform ships
+      GDPR-specific capability: EU data subject classification (Likely / Unlikely /
+      Non-deterministic), EU data delivery control, and PII redaction that can be exposed
+      through an API Factory endpoint.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107937210260-API-Factory-101
+  - id: saml-2.0
+    name: SAML 2.0
+    conforms: true
+    evidence: >-
+      "Openprise supports Single Sign-On (SSO) using SAML 2.0", integrating with Okta,
+      OneLogin, Oracle Access Manager, Ping Federate.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107864003732-Single-Sign-On-SSO-Configuration
+  - id: tls-1.2-plus
+    name: TLS 1.2+
+    conforms: true
+    evidence: >-
+      Published security policy states "strong encryption algorithms with a minimum key
+      length of 256 bits" for HTTPS; the 2019 release notes record the move to TLS 1.2.
+      Live probe of www.openprisetech.com negotiated TLSv1.3 with HSTS max-age 31536000.
+    source: security/openprise-domain-security.yml
+  - id: jmespath
+    name: JMESPath
+    conforms: true
+    evidence: >-
+      Response payloads from external services are mapped to Openprise attributes with
+      JMESPath expressions in the Call Simple REST API task template.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/27776528482324-Call-Simple-REST-API-Webhook
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: false
+    evidence: >-
+      Explicitly not supported. "At this time, Openprise does not support authentication
+      using OAuth to the API service. We only support API key authentication."
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/27776528482324-Call-Simple-REST-API-Webhook
+  - id: oidc
+    name: OpenID Connect
+    conforms: false
+    evidence: >-
+      No /.well-known/openid-configuration is served on any Openprise host; SSO is SAML
+      2.0 only.
+    source: well-known/openprise-well-known.yml
+  - id: rfc9457-problem-details
+    name: RFC 9457 Problem Details
+    conforms: false
+    evidence: No application/problem+json envelope is documented; errors are prose strings.
+    source: errors/openprise-error-codes.yml
+  - id: openapi
+    name: OpenAPI
+    conforms: false
+    evidence: >-
+      No OpenAPI or Swagger document is published. API Factory generates a per-tenant
+      endpoint whose contract is shown only in an in-app "View API Docs" popup.
+    source: https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide
+  - id: asyncapi
+    name: AsyncAPI
+    conforms: false
+    evidence: >-
+      Openprise consumes inbound webhooks (Marketo webhooks calling API Factory) and can
+      call outbound REST services, but publishes no event catalog and emits no subscribable
+      event stream, so there is no event surface to describe.
+  - id: rfc9116-security-txt
+    name: RFC 9116 security.txt
+    conforms: false
+    evidence: /.well-known/security.txt returns 404 on every Openprise host.
+    source: well-known/openprise-well-known.yml
+  - id: iso-27001
+    name: ISO 27001
+    conforms: unknown
+    evidence: Not named on any published Openprise page.
+  - id: hipaa
+    name: HIPAA
+    conforms: unknown
+    evidence: Not named on any published Openprise page.
+compliance_program:
+  published: true
+  url: https://www.openprisetech.com/security
+  certifications:
+    - SOC 2 Type II
+  claims:
+    - Global privacy compliance
+    - Data encrypted at rest and in transit
+    - '"We don''t use your data for AI training" policy'
+    - Single sign-on integration
+    - Role based permission
+    - Delegated administration
+  note: >-
+    The security policy page also cites AWS's own SOC 2 certifications for the hosting
+    layer. Named third-party attestation reports are not offered for public download and
+    there is no trust portal — see security/openprise-trust-center.yml.
+evidence:
+  - url: https://www.openprisetech.com/security
+    http_status: 200
+  - url: https://www.openprisetech.com/pricing
+    http_status: 200
+  - url: https://helpcenter.openprisetech.com/hc/en-us/articles/24107864003732-Single-Sign-On-SSO-Configuration
+    http_status: 200
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
