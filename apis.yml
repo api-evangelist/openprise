@@ -36,6 +36,17 @@ tags:
   - Data Enrichment
   - Deduplication
   - Marketing Operations
+  - Revenue Operations
+  - Sales Operations
+  - Go-To-Market
+tags_raw:
+  - Data Automation
+  - Data Quality
+  - Data Orchestration
+  - AI Orchestration
+  - Data Enrichment
+  - Deduplication
+  - Marketing Operations
   - RevOps
   - Sales Operations
   - Go To Market
@@ -76,6 +87,10 @@ apis:
       - type: Platform
         url: https://www.openprisetech.com/platform/
     tags:
+      - Data Automation
+      - Revenue Operations
+      - API Factory
+    tags_raw:
       - Data Automation
       - RevOps
       - API Factory
