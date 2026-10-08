@@ -106,6 +106,8 @@ apis:
       - RevOps
       - API Factory
 common:
+  - type: FinOps
+    url: finops/openprise-finops.yml
   - type: Website
     url: https://www.openprisetech.com/
   - type: Documentation
