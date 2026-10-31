@@ -1,4 +1,4 @@
-# Openprise (openprise)
+# Openprise
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,54 +64,113 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Free your RevOps teams from the complexities of bad data and give them data they can trust, take action on, and make better decisions with. A simple way to achieve the highest data quality across your marketing, sales, and RevOps processes with the Openprise RevOps Data Automation (RDA) Cloud.
+Openprise is an AI and data orchestration platform built for enterprise go-to-market teams — RevOps, marketing operations and sales operations. It cleans, unifies and activates GTM data across CRM, marketing automation and data warehouse systems through no-code Jobs and Bots, with 400+ pre-built connectors, multi-vendor enrichment waterfalls, deduplication, lead-to-account matching, routing, scoring and segmentation. Its developer-facing surface is API Factory, a licensed feature that turns any configured Job or Bot into a per-tenant REST endpoint callable from Marketo webhooks, Salesforce triggers, web forms or any system that can issue an HTTP POST. Openprise coined the term "data orchestration" in 2017 and is headquartered in San Mateo, California.
 
-**APIs.json:** [apis.yml](https://raw.githubusercontent.com/api-evangelist/openprise/refs/heads/main/apis.yml)
+**Areas:** Data Automation · Data Quality · Data Orchestration · AI Orchestration · Data Enrichment · Deduplication · Marketing Operations · Revenue Operations · Sales Operations · Go-To-Market
 
-## Scope
+## Openprise on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
-- **Specification Version:** 0.19
+Everything profiled for Openprise is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/openprise/](https://apis.io/providers/openprise/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Data Automation
-- Data Quality
-- Marketing Operations
-- RevOps
-- Sales Operations
+- [Openprise API Factory](https://apis.io/apis/openprise/openprise-api/) — API Factory turns any Openprise Job or Bot into a REST endpoint with a single "Enable API" action. The caller sends an HTTP POST carrying a JSON array of…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-08
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (3)
 
-### Openprise API
+Authentication, trust centre, and vulnerability disclosure.
 
-Openprise's "API Factory" lets RevOps teams turn business processes into custom APIs on top of the RevOps Data Automation (RDA) Cloud. Public REST API endpoints are not openly documented; access is provisioned through the Openprise platform.
+- [Openprise Authentication](https://apis.io/security/openprise/openprise-authentication/)
+- [Openprise Domain Security](https://apis.io/security/openprise/openprise-domain-security/)
+- [Openprise Trust Center](https://apis.io/security/openprise/openprise-trust-center/)
 
-- **Human URL:** https://www.openprisetech.com/
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://www.openprisetech.com/)
-- [Platform](https://www.openprisetech.com/platform/)
+- [Openprise Plans Pricing](https://apis.io/plans/openprise/openprise-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Data Automation
-- RevOps
+Published request limits.
 
-## Common
+- [Openprise Rate Limits](https://apis.io/rate-limits/openprise/openprise-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Openprise Finops](https://apis.io/finops/openprise/openprise-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.openprisetech.com/)
-- [Documentation](https://www.openprisetech.com/)
+- [Documentation](https://helpcenter.openprisetech.com/hc/en-us)
+- [Getting started](https://helpcenter.openprisetech.com/hc/en-us/articles/24107502554772-Quick-Start-Guide)
+- [API reference](https://helpcenter.openprisetech.com/hc/en-us/articles/24107925788180-API-Factory-Overview-and-Use-Guide)
+- [Pricing](https://www.openprisetech.com/pricing)
+- [Support](https://helpcenter.openprisetech.com/hc/en-us)
+- [Changelog](https://helpcenter.openprisetech.com/hc/en-us/categories/24103645602580-Release-Notes-Announcements)
+- [Blog](https://www.openprisetech.com/blog)
+- [Compliance](https://www.openprisetech.com/security)
+- [Privacy policy](https://www.openprisetech.com/legal/privacy)
+- [GitHub](https://github.com/openprisetech)
 
-## Maintainers
+## API Evangelist rating
 
-- **FN:** Kin Lane
-- **Email:** kin@apievangelist.com
+**Kin Score 39.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 50.0 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 64.5 |
+
+**Agent readiness 7.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/openprise/](https://apis.io/providers/openprise/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Openprise: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/openprise/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
