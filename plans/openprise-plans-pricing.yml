@@ -1,0 +1,253 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Openprise
+providerId: openprise
+created: '2026-05-04'
+modified: '2026-08-14'
+generated: '2026-08-14'
+method: searched
+source: https://www.openprisetech.com/pricing
+# 2026-08-14: this file previously carried a three-tier free/professional/enterprise
+# SCAFFOLD written by the 2026-05-04 bulk sweep, with invented quotas (1,000 and
+# 100,000 requests/month) and an invented Free tier. Openprise publishes no free tier.
+# Replaced wholesale with the two tiers Openprise actually publishes, read verbatim
+# from the pricing page. See roadmap#35.
+tags:
+  - Data Automation
+  - Data Quality
+  - Marketing Operations
+  - RevOps
+  - Sales Operations
+description: >-
+  Openprise publishes two plans on its pricing page — Professional, with a stated
+  entry price, and Enterprise, priced on application. There is no free tier, no
+  self-serve sign-up, and no per-request or per-seat list price: both tiers are sold
+  annually with unlimited user seats, and the metered dimensions are records per bot
+  run and API calls per day. API Factory itself is a separately licensed feature.
+plan_count: 2
+currency: USD
+billing_period: annual
+self_serve: false
+free_tier: false
+plans:
+  - id: openprise-professional
+    name: Professional
+    type: paid
+    price: '35000'
+    price_qualifier: 'Pricing starts at $35K annually'
+    currency: USD
+    timeFrame: year
+    audience: >-
+      Medium to large enterprises with complex technology stacks and large databases,
+      that require a high level of flexibility to orchestrate custom requirements.
+    entries:
+      - label: User seats
+        name: user_seats
+        type: quota
+        limit: -1
+        note: Unlimited
+      - label: Pre-built connectors
+        name: connectors
+        type: feature
+        limit: 400
+        note: '400+'
+      - label: Records per Bot run
+        name: records_per_bot_run
+        type: quota
+        metric: records
+        limit: 250000
+        note: '250,000+'
+      - label: Bot execution frequency
+        name: bot_execution_frequency
+        type: feature
+        note: Any
+      - label: Log retention
+        name: log_retention
+        type: feature
+        timeFrame: year
+        limit: 1
+        note: 1 year
+      - label: Pre-built solutions
+        name: prebuilt_solutions
+        type: feature
+        limit: 20
+        note: '20+'
+      - label: API Factory (custom APIs)
+        name: api_factory_calls
+        type: quota
+        metric: api_calls
+        limit: 5000
+        timeFrame: day
+        note: '5,000+ API calls per day'
+      - label: AI orchestration
+        name: ai_orchestration_calls
+        type: quota
+        metric: api_calls
+        limit: 5000
+        timeFrame: day
+        note: '5,000+ API calls per day'
+      - label: Open data catalog
+        name: data_catalog_calls
+        type: quota
+        metric: api_calls
+        limit: 5000
+        timeFrame: day
+        note: '5,000+ API calls per day'
+      - label: App Factory (self-service apps)
+        name: app_factory_apps
+        type: quota
+        metric: apps
+        limit: 10
+        note: '10+ apps'
+    elements:
+      - name: Create custom solutions
+      - name: Create custom integrations using Webhook
+      - name: Embedded AI model
+      - name: Pre-built prompt templates
+      - name: Create composable Agents
+      - name: Data marketplace
+      - name: Multi-vendor enrichment waterfall automation
+      - name: Web scraping
+      - name: Analytics engine and charting tools
+      - name: Automated scheduled report delivery
+      - name: Community support
+      - name: Always-on AI support agent
+      - name: 'Human support agent: 4-hour response, Monday-Friday 8am-6pm PT'
+      - name: Dedicated Customer Success manager
+      - name: 'Membership in Customer Advisory Board (by invitation)'
+      - name: SOC2 Type II compliance
+      - name: Global privacy compliance
+      - name: Data encrypted at rest and in transit
+      - name: '"We don''t use your data for AI training" policy'
+      - name: Single sign-on integration
+      - name: Role based permission
+      - name: Delegated administration
+  - id: openprise-enterprise
+    name: Enterprise
+    type: enterprise
+    price: custom
+    price_qualifier: 'Talk to sales'
+    currency: USD
+    timeFrame: year
+    audience: >-
+      Large enterprises with the highest security, compliance, performance, scalability
+      and support requirements.
+    entries:
+      - label: User seats
+        name: user_seats
+        type: quota
+        limit: -1
+        note: Unlimited
+      - label: Pre-built connectors
+        name: connectors
+        type: feature
+        limit: 400
+        note: '400+'
+      - label: Records per Bot run
+        name: records_per_bot_run
+        type: quota
+        metric: records
+        limit: 250000
+        note: '250,000+'
+      - label: Bot execution frequency
+        name: bot_execution_frequency
+        type: feature
+        note: Any
+      - label: Log retention
+        name: log_retention
+        type: feature
+        timeFrame: year
+        limit: 1
+        note: 1 year
+      - label: Pre-built solutions
+        name: prebuilt_solutions
+        type: feature
+        limit: 20
+        note: '20+'
+      - label: API Factory (custom APIs)
+        name: api_factory_calls
+        type: quota
+        metric: api_calls
+        limit: 10000
+        timeFrame: day
+        note: '10,000+ API calls per day'
+      - label: AI orchestration
+        name: ai_orchestration_calls
+        type: quota
+        metric: api_calls
+        limit: 10000
+        timeFrame: day
+        note: '10,000+ API calls per day'
+      - label: Open data catalog
+        name: data_catalog_calls
+        type: quota
+        metric: api_calls
+        limit: 5000
+        timeFrame: day
+        note: '5,000+ API calls per day'
+      - label: App Factory (self-service apps)
+        name: app_factory_apps
+        type: quota
+        metric: apps
+        limit: 10
+        note: '10+ apps'
+    elements:
+      - name: Everything in Professional
+      - name: 'Human support agent: 2-hour response, 24 x 7 x 365'
+      - name: Membership in Customer Advisory Board
+      - name: Paid memberships (5) to MoPro or RevOps Co-op communities
+      - name: Dedicated server option
+      - name: Dedicated sandbox
+notes:
+  - >-
+    The pricing page publishes no per-call overage rate and no price for exceeding a
+    daily API allowance; every allowance is written with a "+" ("5,000+ API calls per
+    day"), so the published figure is a floor, not a cap.
+  - >-
+    "Transformations allowed (Integration project)" appears as a line item on both tiers
+    with no value published.
+  - >-
+    A "Dedicated sandbox" is an Enterprise-tier entitlement, not a public developer
+    sandbox. Openprise publishes no self-serve trial, no test credentials, and no test
+    mode, so no sandbox/ artifact was written.
+  - >-
+    API Factory is described in the Help Center as "a licensed feature of the Openprise
+    platform" that must be enabled per tenant, independent of the plan tier shown here.
+evidence:
+  - url: https://www.openprisetech.com/pricing
+    http_status: 200
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - free
+  units:
+  - data
+  - request
+  plans:
+  - name: Professional
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - data
+    - other
+    - request
+    periods:
+    - day
+    - year
+  - name: Enterprise
+    access: enterprise
+    model: free
+    model_how: derived
+    units:
+    - data
+    - other
+    - request
+    periods:
+    - day
+    - year
